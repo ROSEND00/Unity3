@@ -4905,6 +4905,7 @@ GameObject:
   - component: {fileID: 1590477039}
   - component: {fileID: 1590477042}
   - component: {fileID: 1590477041}
+  - component: {fileID: 1590477043}
   m_Layer: 0
   m_Name: john
   m_TagString: Untagged
@@ -5040,7 +5041,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1590477041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5053,6 +5054,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd70040d6da98f048b767c0d71054b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 7410256430008504157, guid: ae1493bc2841c45488de3757fe32bc57, type: 3}
+  Speed: 1
+  JumpForce: 150
 --- !u!114 &1590477042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5065,6 +5069,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 497cda54198a3fa44a7b65894d714e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1590477043
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590477036}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d7e9eb30bdfeebf45b09a2d04231811d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1677867268
 GameObject:
   m_ObjectHideFlags: 0
