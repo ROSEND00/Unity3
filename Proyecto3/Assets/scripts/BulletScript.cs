@@ -5,12 +5,14 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     public float Speed;
-    private Rigidbody2D Rigidbody2D;
+    private  Rigidbody2D Rigidbody2D;
     private Vector2 Direction;
+    public AudioClip Sound;
     // Start is called before the first frame update
     void Start()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(Sound);
     }
 
     // Update is called once per frame
@@ -23,9 +25,26 @@ public class BulletScript : MonoBehaviour
     {
 
         Direction = direction;
-
+ 
     }
-
-
+    public void DestroyBullet() 
+    { 
+        Destroy(gameObject);
+        
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        grountscript grount = other.GetComponent<grountscript>();
+        JohnMove john = other.GetComponent<JohnMove>();
+        if (grount != null)
+        {
+            grount.Hit();
+        }
+        if (john != null)
+        {
+            john.Hit();
+        }
+        DestroyBullet();
+    }
 }
 
